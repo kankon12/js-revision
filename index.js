@@ -133,14 +133,32 @@
 //     }
 // }
 
-for(let i = 0; i<=50; i++){
-    if( i % 3 === 0){
-        document.write("Fizz"+"<br/>");
-    }else if( i % 5===0){
-        document.write("Buzz"+"<br/>")
-    }else if( i % 3 === 0  &&  i % 5===0 ){
-        document.write('FuzZ BuzZ'+"<br/>")
-    }else{
-        document.write(i+"<br/>")
+// for(let i = 0; i<=50; i++){
+//     if( i % 3 === 0){
+//         document.write("Fizz"+"<br/>");
+//     }else if( i % 5===0){
+//         document.write("Buzz"+"<br/>")
+//     }else if( i % 3 === 0  &&  i % 5===0 ){
+//         document.write('FuzZ BuzZ'+"<br/>")
+//     }else{
+//         document.write(i+"<br/>")
+//     }
+// }
+
+let savingsAmount = 0;
+
+for( i = 1; i <= 30; i++){
+    switch(true){
+        case (i % 7 === 0):
+            savingsAmount += 50;
+            document.write(savingsAmount+"<br>")
+            break;
+        case (i % 2 === 0):
+            savingsAmount += 20;
+            break;
+        default :
+        savingsAmount += 10        
     }
 }
+
+document.write(`Total sevings ${savingsAmount}`)
