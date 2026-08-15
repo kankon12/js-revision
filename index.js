@@ -145,20 +145,111 @@
 //     }
 // }
 
-let savingsAmount = 0;
+// let savingsAmount = 0;
 
-for( i = 1; i <= 30; i++){
-    switch(true){
-        case (i % 7 === 0):
-            savingsAmount += 50;
-            document.write(savingsAmount+"<br>")
-            break;
-        case (i % 2 === 0):
-            savingsAmount += 20;
-            break;
-        default :
-        savingsAmount += 10        
+// for( i = 1; i <= 30; i++){
+//     switch(true){
+//         case (i % 7 === 0):
+//             savingsAmount += 50;
+//             document.write(savingsAmount+"<br>")
+//             break;
+//         case (i % 2 === 0):
+//             savingsAmount += 20;
+//             break;
+//         default :
+//         savingsAmount += 10        
+//     }
+// }
+
+// document.write(`Total sevings ${savingsAmount}`)
+
+// let number = 29
+// let isprime = true ;
+
+// for ( i = 2; i < number; i ++){
+//     switch(true){
+//         case (number % i ===0) :
+//             isprime = false ;
+//             break;
+
+//     }
+// }
+// hsldia
+// if (isprime) {
+//     document.write(`${number} হলো একটি মৌলিক সংখ্যা (Prime Number)।`);
+// } else {
+//     document.write(`${number} মৌলিক সংখ্যা নয়।`);
+// }
+
+
+// let i = 10;
+
+// while(i >= 1){
+//     i--
+//     document.write(i)
+// }
+
+
+
+// let i = 2; // জোড় সংখ্যা ২ থেকে শুরু করা ভালো
+
+// while(i <= 20){
+//   document.write(i + "<br>"); // প্রতিবার প্রিন্ট হবে
+//   i = i + 2; // মান ২ করে বাড়বে
+// }
+
+// let userName =  prompt("Enter Your name");
+
+// let totalIncome = parseFloat( prompt("Enter your total income :"))
+
+// const numberOfExpences = parseInt(prompt('How many expences do you have ?:'))
+
+// if( isNaN(totalIncome) || isNaN(numberOfExpences) ||    totalIncome <=0|| numberOfExpences <= 0 ){
+//     console.log("invalid inpute")
+// }else{
+//     let totalExpence = 0;
+
+//     for (let    = 0;    < array.length;   ++) {
+//         const element = array[  ];
+        
+//     }
+// }
+
+
+
+// user name
+let userName = prompt("Enter your user Name :");
+// income
+let income = parseInt(prompt("Enter your total income :"));
+// expense count input
+const numberOfExpence = parseInt(prompt('How many expenses do you have?'));
+
+// income and expense validation
+if (isNaN(income) || isNaN(numberOfExpence) || income <= 0 || numberOfExpence <= 0) {
+    console.log("Invalid Input");
+} else {
+    let totalExpense = 0;
+
+    // Loop to collect each expense
+    for (let i = 1; i <= numberOfExpence; i++) {
+        let expenseAmount = parseFloat(prompt(`Enter amount for expense ${i}:`));
+        
+        // Validate individual expense input
+        if (isNaN(expenseAmount) || expenseAmount < 0) {
+            console.log(`Invalid amount entered for expense ${i}. Skipping.`);
+             expenseAmount =0;
+        } else {
+            totalExpense += expenseAmount;
+        }
     }
-}
 
-document.write(`Total sevings ${savingsAmount}`)
+    // Calculate savings/remaining balance
+    let remainingBalance = income - totalExpense;
+
+    // Display the summary
+   
+     document.write(`--- Expense Report for ${userName} ---`);
+    document.write(`Total Income: $${income}`);
+  document.write(`Total Expenses: $${totalExpense}`);
+  document.write(`Remaining Balance: $${remainingBalance}`);
+}
